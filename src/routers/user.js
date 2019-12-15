@@ -7,7 +7,7 @@ const multer = require('multer')
 const { sendWelcomeEmails,sendCancelationEmail } = require('../emails/account')
 
 //signup route
-router.post('/users',auth, async (req, res)=>{
+router.post('/users', async (req, res)=>{
     const user = new User(req.body)
   
      try{
