@@ -61,7 +61,7 @@ userSchema.virtual('tasks', {
     foreignField:'owner' // sets the relationship
 })
 
-userSchema.methods.toJSON = function(){
+userSchema.methods.toJSON = function(){ //this gets automatically triggered when we use res.send(user) as express calls JSON.stringify() on object before sending it to client and JSON.stringify triggers toJSON method defined in this file i.e user model
     const user = this
     const userObject = user.toObject() //converting user instance in JS object
 
